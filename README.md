@@ -1,75 +1,181 @@
-## ✅ Assignment Coverage
+# ✅ Assignment Coverage
 
-This project implements all required functionality from the Engineering Internship Take-Home Assignment and extends it with several production-style features.
+This project fully implements the required functionality from the **Engineering Internship Take-Home Assignment** and extends it into a production-ready **Restaurant Management System** with advanced management, analytics, AI, and payment capabilities.
 
-### Required Features
+---
 
-#### Backend
-- ✅ Create Orders API
-- ✅ Automatic subtotal, tip, discount, and total calculation
+# 🎯 Assignment Requirements Completed
+
+## Backend
+
+- ✅ Order Creation API
+- ✅ Automatic subtotal, tip, discount, and total calculations
 - ✅ Convenience Fee calculation (Card payments)
 - ✅ Dual Pricing surcharge support
-- ✅ Order validation with invariant checks
+- ✅ Billing invariant validation
 - ✅ Split Bill API with exact cent distribution
-- ✅ Daily Reports API with timezone-aware business day grouping
+- ✅ Timezone-aware Daily Reports API
 - ✅ Comprehensive unit tests for:
   - Rounding edge cases
-  - Billing invariant
-  - Exact split totals
+  - Billing invariant validation
+  - Exact split calculations
   - Timezone boundary scenarios
 
-#### Frontend
-- ✅ Order Creation Screen
-- ✅ Live Billing Breakdown
-- ✅ Server-calculated totals
+## Frontend
+
+- ✅ Interactive Order Screen
+- ✅ Live billing breakdown
+- ✅ Server-authoritative total calculation
 - ✅ Split Bill Screen
-- ✅ Daily Reports Screen
+- ✅ Daily Reports Dashboard
 - ✅ Responsive UI
 - ✅ TypeScript throughout
 
 ---
 
-## 🚀 Additional Features Beyond Assignment
+# 🚀 Enterprise Features Beyond the Assignment
 
-This project also includes several enterprise-level enhancements that were not required in the original assignment.
+The application has been expanded into a complete restaurant management platform with enterprise-grade capabilities.
 
-### 🤖 AI Assistant
-- AI-powered restaurant operations assistant
-- Smart recommendations and quick actions
-- Natural language support
+## 🔐 Authentication & Role-Based Access Control (RBAC)
 
-### 🍳 Kitchen Monitoring
-- Live kitchen status monitoring
-- Order preparation tracking
-- Operational insights
+- Secure authentication
+- Role-based authorization
+- Admin and Staff roles
+- Protected routes and APIs
+- Permission-based UI rendering
 
-### 👨‍🍳 Staff Management
+## 👥 Staff Management
+
 - Staff directory
-- Role management
-- Employee administration
+- Employee management
+- Role assignment
+- Access management
 
-### 📊 Analytics Dashboard
+## 🍽️ Menu Management
+
+- Create menu items
+- Update menu items
+- Delete menu items
+- Category and pricing management
+- **Only Admin and Staff can manage menu items**
+
+## 🧾 Order Management
+
+- Create restaurant orders
+- Update existing orders
+- Delete orders
+- Live order status tracking
+- Split bill support
+- **Only Admin and Staff can create, edit, or delete orders**
+
+## 🪑 Table Booking Management
+
+- Table reservations
+- Booking status tracking
+- Customer reservation details
+- Table availability management
+
+## 🍳 Kitchen Monitoring
+
+- Kitchen order queue
+- Food preparation tracking
+- Live kitchen workflow
+- Order status monitoring
+
+## 🤖 AI Restaurant Assistant
+
+- AI-powered operational assistant
+- Smart recommendations
+- Natural language interactions
+- Restaurant management assistance
+
+## 📊 Analytics Dashboard
+
 - Revenue analytics
-- Sales trends
+- Sales reports
 - Order statistics
+- Business insights
 - Interactive charts
-- Performance insights
 
-### 🔗 Integrations
-- External API integrations
+## 🔗 Integrations
+
+- External service integrations
 - Modular integration architecture
-- Easily extensible service layer
+- Scalable API connectivity
 
 ---
 
-## 🌟 Extra Improvements
+# 💳 Payments & Customer Experience
 
-- Modern dashboard UI
-- Role-based authentication
-- Responsive design
-- Modular architecture
-- Clean component structure
-- Reusable API layer
-- Production-ready folder organization
-- Comprehensive error handling
-- Type-safe API communication
+## Integrated Payments
+
+- Secure payment gateway integration
+- Card, Cash, and Digital payment support
+- Real-time payment confirmation
+- Payment status tracking
+
+## QR Code Payments
+
+- Dynamic QR code generation for each order
+- Contactless scan-and-pay experience
+- Instant payment verification
+
+## 🧾 Digital Receipts
+
+- Automatic receipt generation
+- Email receipt delivery
+- SMS receipt notifications
+- Printable invoices
+- Payment history tracking
+
+## Advanced Billing
+
+- Automatic tax calculation
+- Tip and discount support
+- Split bill functionality
+- Multiple payment methods
+- Accurate financial calculations
+
+---
+
+# 🔒 Permissions Matrix
+
+| Feature | Admin | Staff | Customer |
+|----------|:-----:|:-----:|:--------:|
+| Dashboard | ✅ | ✅ | ❌ |
+| Manage Menu Items | ✅ | ✅ | ❌ |
+| Create Orders | ✅ | ✅ | ❌ |
+| Edit Orders | ✅ | ✅ | ❌ |
+| Delete Orders | ✅ | ✅ | ❌ |
+| Table Booking | ✅ | ✅ | ✅ |
+| Manage Staff | ✅ | ❌ | ❌ |
+| View Analytics | ✅ | ✅ | ❌ |
+| Kitchen Monitoring | ✅ | ✅ | ❌ |
+| AI Assistant | ✅ | ✅ | ✅ |
+| Payments | ✅ | ✅ | ✅ |
+| QR Code Payments | ✅ | ✅ | ✅ |
+| Email Receipts | ✅ | ✅ | ✅ |
+| SMS Receipts | ✅ | ✅ | ✅ |
+| Third-Party Integrations | ✅ | ✅ | ❌ |
+
+---
+
+# 🌟 Project Highlights
+
+- 🚀 Full-stack TypeScript application
+- 🔐 Enterprise-grade RBAC security
+- 💳 Secure payment gateway integration
+- 📱 QR Code-based contactless payments
+- 📧 Email & SMS receipt delivery
+- 🪑 Table booking and reservation management
+- 👨‍💼 Staff administration
+- 🍽️ Menu and order management
+- 🍳 Kitchen monitoring dashboard
+- 🤖 AI-powered restaurant assistant
+- 📊 Interactive analytics and reporting
+- 🌍 Timezone-aware daily reporting
+- 💰 Accurate billing with precise financial calculations
+- 📱 Fully responsive modern interface
+- 🧩 Modular, scalable architecture
+```
