@@ -1,6 +1,6 @@
 # ✅ Assignment Coverage
 
-This project fully implements the required functionality from the **Engineering Internship Take-Home Assignment** and extends it into a production-ready **Restaurant Management System** with advanced management, analytics, AI, and payment capabilities.
+This project fully implements the required functionality from the **Engineering Internship Take-Home Assignment** and extends it into a production-ready **Restaurant Management System** with advanced management, analytics, AI, and operational capabilities.
 
 ---
 
@@ -35,8 +35,6 @@ This project fully implements the required functionality from the **Engineering 
 
 # 🚀 Enterprise Features Beyond the Assignment
 
-The application has been expanded into a complete restaurant management platform with enterprise-grade capabilities.
-
 ## 🔐 Authentication & Role-Based Access Control (RBAC)
 
 - Secure authentication
@@ -54,10 +52,9 @@ The application has been expanded into a complete restaurant management platform
 
 ## 🍽️ Menu Management
 
-- Create menu items
-- Update menu items
-- Delete menu items
-- Category and pricing management
+- Create, update, and delete menu items
+- Category management
+- Price management
 - **Only Admin and Staff can manage menu items**
 
 ## 🧾 Order Management
@@ -85,10 +82,10 @@ The application has been expanded into a complete restaurant management platform
 
 ## 🤖 AI Restaurant Assistant
 
-- AI-powered operational assistant
+- AI-powered restaurant assistant
 - Smart recommendations
 - Natural language interactions
-- Restaurant management assistance
+- Restaurant operational assistance
 
 ## 📊 Analytics Dashboard
 
@@ -106,39 +103,6 @@ The application has been expanded into a complete restaurant management platform
 
 ---
 
-# 💳 Payments & Customer Experience
-
-## Integrated Payments
-
-- Secure payment gateway integration
-- Card, Cash, and Digital payment support
-- Real-time payment confirmation
-- Payment status tracking
-
-## QR Code Payments
-
-- Dynamic QR code generation for each order
-- Contactless scan-and-pay experience
-- Instant payment verification
-
-## 🧾 Digital Receipts
-
-- Automatic receipt generation
-- Email receipt delivery
-- SMS receipt notifications
-- Printable invoices
-- Payment history tracking
-
-## Advanced Billing
-
-- Automatic tax calculation
-- Tip and discount support
-- Split bill functionality
-- Multiple payment methods
-- Accurate financial calculations
-
----
-
 # 🔒 Permissions Matrix
 
 | Feature | Admin | Staff | Customer |
@@ -153,11 +117,7 @@ The application has been expanded into a complete restaurant management platform
 | View Analytics | ✅ | ✅ | ❌ |
 | Kitchen Monitoring | ✅ | ✅ | ❌ |
 | AI Assistant | ✅ | ✅ | ✅ |
-| Payments | ✅ | ✅ | ✅ |
-| QR Code Payments | ✅ | ✅ | ✅ |
-| Email Receipts | ✅ | ✅ | ✅ |
-| SMS Receipts | ✅ | ✅ | ✅ |
-| Third-Party Integrations | ✅ | ✅ | ❌ |
+| Integrations | ✅ | ✅ | ❌ |
 
 ---
 
@@ -165,12 +125,10 @@ The application has been expanded into a complete restaurant management platform
 
 - 🚀 Full-stack TypeScript application
 - 🔐 Enterprise-grade RBAC security
-- 💳 Secure payment gateway integration
-- 📱 QR Code-based contactless payments
-- 📧 Email & SMS receipt delivery
-- 🪑 Table booking and reservation management
-- 👨‍💼 Staff administration
-- 🍽️ Menu and order management
+- 👥 Staff management
+- 🍽️ Menu management
+- 🧾 Order management
+- 🪑 Table booking system
 - 🍳 Kitchen monitoring dashboard
 - 🤖 AI-powered restaurant assistant
 - 📊 Interactive analytics and reporting
@@ -178,4 +136,3 @@ The application has been expanded into a complete restaurant management platform
 - 💰 Accurate billing with precise financial calculations
 - 📱 Fully responsive modern interface
 - 🧩 Modular, scalable architecture
-```
