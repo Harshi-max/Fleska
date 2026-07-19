@@ -225,8 +225,8 @@ export function AdvancedAnalytics() {
                 </h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <PieChart>
-                    <Pie data={analytics.top_items} dataKey="quantity_sold" nameKey="item_name" cx="50%" cy="50%" outerRadius={80} label>
-                      {analytics.top_items.map((_, index) => (
+                    <Pie data={analytics.top_items} dataKey="quantity" nameKey="name" cx="50%" cy="50%" outerRadius={80} label>
+                      {analytics.top_items.map((_: any, index: number) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>
@@ -285,38 +285,45 @@ export function AdvancedAnalytics() {
               <h3 className="text-lg font-bold mb-4" style={{ color: "#e5e7eb" }}>
                 Top Selling Items
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr style={{ backgroundColor: "rgba(255, 90, 0, 0.1)" }}>
-                      <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
-                        Item
-                      </th>
-                      <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
-                        Quantity Sold
-                      </th>
-                      <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
-                        Revenue
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {analytics.top_items.map((item, index) => (
-                      <tr key={index} style={{ borderTopColor: "rgba(255, 90, 0, 0.1)" }} className="border-t">
-                        <td className="px-4 py-3" style={{ color: "#e5e7eb" }}>
-                          {item.item_name}
-                        </td>
-                        <td className="px-4 py-3" style={{ color: "#ff5a00" }}>
-                          {item.quantity_sold}
-                        </td>
-                        <td className="px-4 py-3" style={{ color: "#10b981" }}>
-                          ₹{item.revenue}
-                        </td>
+              {analytics.top_items && analytics.top_items.length > 0 ? (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr style={{ backgroundColor: "rgba(255, 90, 0, 0.1)" }}>
+                        <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
+                          Item
+                        </th>
+                        <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
+                          Quantity Sold
+                        </th>
+                        <th className="px-4 py-3 text-left" style={{ color: "#9ca3af" }}>
+                          Revenue
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody>
+                      {analytics.top_items.map((item: any, index: number) => (
+                        <tr key={index} style={{ borderTopColor: "rgba(255, 90, 0, 0.1)" }} className="border-t">
+                          <td className="px-4 py-3" style={{ color: "#e5e7eb" }}>
+                            {item.name}
+                          </td>
+                          <td className="px-4 py-3" style={{ color: "#ff5a00" }}>
+                            {item.quantity}
+                          </td>
+                          <td className="px-4 py-3" style={{ color: "#10b981" }}>
+                            ${item.revenue}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="text-center py-4">
+                  <p className="text-sm" style={{ color: "#9ca3af" }}>No orders yet</p>
+                  <p className="text-xs mt-1" style={{ color: "#6b7280" }}>Create orders to see top selling items</p>
+                </div>
+              )}
             </div>
           </>
         )}

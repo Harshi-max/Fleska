@@ -40,7 +40,7 @@ export function Sidebar({ onScreenChange, currentScreen }: SidebarProps) {
     { id: "tables", label: "Tables", icon: Users },
     { id: "analytics", label: "Analytics", icon: TrendingUp },
     { id: "ai-assistant", label: "AI Assistant", icon: Bot },
-    { id: "reports", label: "Reports", icon: FileText, external: true },
+    { id: "reports", label: "Reports", icon: FileText },
     { id: "integrations", label: "Integrations", icon: Zap },
     { id: "staff", label: "Staff", icon: Users, adminOnly: true },
     { id: "kitchen", label: "Kitchen", icon: ChefHat },

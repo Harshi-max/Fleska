@@ -167,17 +167,24 @@ export function DashboardOverview() {
         {/* Top Selling Items */}
         <div className="rounded-lg p-6" style={{ backgroundColor: "rgba(15, 15, 15, 0.8)", border: "1px solid rgba(255, 90, 0, 0.2)" }}>
           <h3 className="text-sm font-mono uppercase tracking-wider mb-4" style={{ color: "#9ca3af" }}>Top Selling Items</h3>
-          <div className="space-y-3">
-            {topSellingItems.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-sm" style={{ color: "#e5e7eb" }}>{item.name}</span>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 rounded w-32" style={{ backgroundColor: "#ff5a00" }}></div>
-                  <span className="text-xs" style={{ color: "#9ca3af" }}>{item.count}</span>
+          {topSellingItems.length > 0 ? (
+            <div className="space-y-3">
+              {topSellingItems.map((item) => (
+                <div key={item.name} className="flex justify-between items-center">
+                  <span className="text-sm" style={{ color: "#e5e7eb" }}>{item.name}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 rounded w-32" style={{ backgroundColor: "#ff5a00" }}></div>
+                    <span className="text-xs" style={{ color: "#9ca3af" }}>{item.count}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-4">
+              <p className="text-sm" style={{ color: "#9ca3af" }}>No orders yet</p>
+              <p className="text-xs mt-1" style={{ color: "#6b7280" }}>Create orders to see top selling items</p>
+            </div>
+          )}
         </div>
       </div>
 

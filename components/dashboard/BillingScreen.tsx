@@ -140,16 +140,29 @@ ${index + 1}. Order ID: ${order.id}
       return;
     }
     
-    const searchTerm = searchOrderId.trim().toLowerCase();
+    const searchTerm = searchOrderId.trim();
     console.log('BillingScreen - Searching for:', searchTerm);
     console.log('BillingScreen - Available orders from API:', orders.length);
     console.log('BillingScreen - Order IDs from API:', orders.map(o => o.id));
     
-    // First try to find in API orders
-    let found = orders.find(order => {
-      const orderId = (order.id || '').toLowerCase();
-      return orderId.includes(searchTerm);
-    });
+    // First try exact match in API orders
+    let found = orders.find(order => order.id === searchTerm);
+    
+    // If not found, try case-insensitive match in API orders
+    if (!found) {
+      found = orders.find(order => {
+        const orderId = (order.id || '').toLowerCase();
+        return orderId === searchTerm.toLowerCase();
+      });
+    }
+    
+    // If not found, try partial match in API orders
+    if (!found) {
+      found = orders.find(order => {
+        const orderId = (order.id || '').toLowerCase();
+        return orderId.includes(searchTerm.toLowerCase());
+      });
+    }
     
     // If not found in API orders, try orderStore directly
     if (!found) {
@@ -158,10 +171,24 @@ ${index + 1}. Order ID: ${order.id}
       console.log('BillingScreen - Orders from store:', storeOrders.length);
       console.log('BillingScreen - Order IDs from store:', storeOrders.map(o => o.id));
       
-      found = storeOrders.find(order => {
-        const orderId = (order.id || '').toLowerCase();
-        return orderId.includes(searchTerm);
-      });
+      // Exact match in store
+      found = storeOrders.find(order => order.id === searchTerm);
+      
+      // Case-insensitive match in store
+      if (!found) {
+        found = storeOrders.find(order => {
+          const orderId = (order.id || '').toLowerCase();
+          return orderId === searchTerm.toLowerCase();
+        });
+      }
+      
+      // Partial match in store
+      if (!found) {
+        found = storeOrders.find(order => {
+          const orderId = (order.id || '').toLowerCase();
+          return orderId.includes(searchTerm.toLowerCase());
+        });
+      }
     }
     
     console.log('BillingScreen - Search result:', found);
