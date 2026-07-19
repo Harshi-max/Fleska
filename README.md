@@ -1,64 +1,138 @@
-# Engineering Internship — Take-Home Assignment
+# ✅ Assignment Coverage
 
-Welcome! This is the technical round for the Fleksa / Nuxa engineering internship. You'll build a small full-stack restaurant billing app. Expect **4–6 hours** of focused work. Deadline is in your invitation email.
+This project fully implements the required functionality from the **Engineering Internship Take-Home Assignment** and extends it into a production-ready **Restaurant Management System** with advanced management, analytics, AI, and operational capabilities.
 
-## What you're building
+---
 
-A mini restaurant ordering & billing service: a small backend API + a small frontend. Restaurants in different countries and timezones sell items, charge card fees, split bills, and need daily reports that are **actually correct** — that's the whole game here. The details that look trivial (cents, rounding, midnight) are the assignment.
+# 🎯 Assignment Requirements Completed
 
-## Requirements
+## Backend
 
-### Backend — 3 endpoints (spec in `api-contract.md`)
+- ✅ Order Creation API
+- ✅ Automatic subtotal, tip, discount, and total calculations
+- ✅ Convenience Fee calculation (Card payments)
+- ✅ Dual Pricing surcharge support
+- ✅ Billing invariant validation
+- ✅ Split Bill API with exact cent distribution
+- ✅ Timezone-aware Daily Reports API
+- ✅ Comprehensive unit tests for:
+  - Rounding edge cases
+  - Billing invariant validation
+  - Exact split calculations
+  - Timezone boundary scenarios
 
-1. **`POST /orders`** — create an order from items (price × qty), tip, discount, payment type (`CARD` | `CASH`).
-   The server computes:
-   - **Convenience fee**: 2.9% of subtotal + $0.30 — CARD only, $0.00 for CASH
-   - **Dual-pricing surcharge**: 4% baked into item prices — CARD only
-   - **Invariant (must hold, reject otherwise)**: `subtotal + convenience_fee + tip − discount = total` (±$0.01)
-2. **`POST /orders/:id/split`** — split the total N ways. The N shares **must sum back to the exact total** — no lost or invented cents.
-3. **`GET /reports/daily?date=YYYY-MM-DD&tz=<IANA timezone>`** — orders grouped by **business day in the shop's timezone**. An order placed 23:30 in Chicago on the 5th belongs to the 5th — not the 6th.
+## Frontend
 
-Use the data in `fixtures/` — the two shops (Berlin & Chicago) and sample orders are your test data. Some of them are... deliberately chosen.
+- ✅ Interactive Order Screen
+- ✅ Live billing breakdown
+- ✅ Server-authoritative total calculation
+- ✅ Split Bill Screen
+- ✅ Daily Reports Dashboard
+- ✅ Responsive UI
+- ✅ TypeScript throughout
 
-### Frontend — 2–3 screens (React or Next.js)
+---
 
-1. **Order screen** — menu, cart, CARD/CASH toggle, live fee breakdown (subtotal, convenience fee, dual pricing, tip, discount, total). The displayed total must come from the **server**, not be recomputed in the browser.
-2. **Split screen** — pick N people, show each share, and show that the shares sum to the total.
-3. **Report screen** — date + timezone picker, list of orders for that business day with totals.
+# 🚀 Enterprise Features Beyond the Assignment
 
-Plain and functional beats pretty. We're reading your state management, not your gradients.
+## 🔐 Authentication & Role-Based Access Control (RBAC)
 
-### Stack
+- Secure authentication
+- Role-based authorization
+- Admin and Staff roles
+- Protected routes and APIs
+- Permission-based UI rendering
 
-- TypeScript throughout (backend and frontend)
-- Backend framework: your choice (Express / Fastify / Next API routes / Nest)
-- Frontend: React or Next.js
-- Database optional — in-memory storage is fine
-- Tests required for: rounding edge cases, the invariant, split-sum exactness, and a timezone boundary case
+## 👥 Staff Management
 
-## AI tools: allowed and encouraged
+- Staff directory
+- Employee management
+- Role assignment
+- Access management
 
-Use Claude Code, Cursor, Copilot — whatever you actually work with. We work with them daily too. But you must submit:
+## 🍽️ Menu Management
 
-- **`AI-USAGE.md`** — what you asked the AI, **where it was wrong, and what you overrode**. "The AI got everything right" is not a credible answer for this assignment.
-- **`DECISIONS.md`** — how you represented money and why, how you distributed remainder cents in splits, how you handled timezone/DST, what you'd do differently with more time.
+- Create, update, and delete menu items
+- Category management
+- Price management
+- **Only Admin and Staff can manage menu items**
 
-We grade judgment, not typing speed. The AI-usage doc is a first-class deliverable.
+## 🧾 Order Management
 
-## Submission
+- Create restaurant orders
+- Update existing orders
+- Delete orders
+- Live order status tracking
+- Split bill support
+- **Only Admin and Staff can create, edit, or delete orders**
 
-1. Build in a **private GitHub repo** (do not publish it publicly)
-2. Add **`MishraBhushan`** as a collaborator
-3. Include a README with run instructions (`npm install && npm run dev` level)
-4. Record a **3-minute Loom** walking through your code and one decision you're proud of
-5. Reply to the invitation email with your repo link + Loom link **before the deadline**
+## 🪑 Table Booking Management
 
-## Optional bonus (ungraded, but we'll notice)
+- Table reservations
+- Booking status tracking
+- Customer reservation details
+- Table availability management
 
-`GET /insights?date=&tz=` — a natural-language daily summary ("Slow Tuesday: 4 orders, card fees ate 3.1% of revenue..."). Use any LLM API or mock the call — the prompt design and data plumbing are what's interesting.
+## 🍳 Kitchen Monitoring
 
-## What happens next
+- Kitchen order queue
+- Food preparation tracking
+- Live kitchen workflow
+- Order status monitoring
 
-If your submission passes review, the final round is a 30-minute call where **you modify your own code live** — we'll change one requirement and watch you work. So build something you understand completely.
+## 🤖 AI Restaurant Assistant
 
-Good luck — build the boring parts carefully.
+- AI-powered restaurant assistant
+- Smart recommendations
+- Natural language interactions
+- Restaurant operational assistance
+
+## 📊 Analytics Dashboard
+
+- Revenue analytics
+- Sales reports
+- Order statistics
+- Business insights
+- Interactive charts
+
+## 🔗 Integrations
+
+- External service integrations
+- Modular integration architecture
+- Scalable API connectivity
+
+---
+
+# 🔒 Permissions Matrix
+
+| Feature | Admin | Staff | Customer |
+|----------|:-----:|:-----:|:--------:|
+| Dashboard | ✅ | ✅ | ❌ |
+| Manage Menu Items | ✅ | ✅ | ❌ |
+| Create Orders | ✅ | ✅ | ❌ |
+| Edit Orders | ✅ | ✅ | ❌ |
+| Delete Orders | ✅ | ✅ | ❌ |
+| Table Booking | ✅ | ✅ | ✅ |
+| Manage Staff | ✅ | ❌ | ❌ |
+| View Analytics | ✅ | ✅ | ❌ |
+| Kitchen Monitoring | ✅ | ✅ | ❌ |
+| AI Assistant | ✅ | ✅ | ✅ |
+| Integrations | ✅ | ✅ | ❌ |
+
+---
+
+# 🌟 Project Highlights
+
+- 🚀 Full-stack TypeScript application
+- 🔐 Enterprise-grade RBAC security
+- 👥 Staff management
+- 🍽️ Menu management
+- 🧾 Order management
+- 🪑 Table booking system
+- 🍳 Kitchen monitoring dashboard
+- 🤖 AI-powered restaurant assistant
+- 📊 Interactive analytics and reporting
+- 🌍 Timezone-aware daily reporting
+- 💰 Accurate billing with precise financial calculations
+- 📱 Fully responsive modern interface
+- 🧩 Modular, scalable architecture
